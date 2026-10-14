@@ -35,9 +35,15 @@ public class Conta {
     }
 
     public double deposito(double valor) {
-        saldo += valor;
+        return saldo += valor;
     }
+
     public double saque(double valor) {
-        saldo -= valor + 5.0;
+        return saldo -= valor + 5.0;
+    }
+
+    public String toString() {
+        return "Numero da conta: " + numeroConta + " | Nome do cliente: " + nome + " | Saldo "
+                + String.format("%.2f", saldo);
     }
 }
