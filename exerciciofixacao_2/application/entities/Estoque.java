@@ -14,6 +14,7 @@ public class Estoque {
     public Estoque(String nome, double preco) {
         this.nome = nome;
         this.preco = preco;
+        this.quantidade = 0;
     }
 
     public String nomeGet() {
@@ -28,7 +29,7 @@ public class Estoque {
         return preco;
     }
 
-    public void precoGet(double preco) {
+    public void precoSet(double preco) {
         this.preco = preco;
     }
 
@@ -38,18 +39,18 @@ public class Estoque {
 
     public double valorEstoque() {
         return preco * quantidade;
-    };
-
-    public int adcEstoque(int quantidade) {
-        return this.quantidade += quantidade;
     }
 
-    public int rmvEstoque(int quantidade) {
-        return this.quantidade -= quantidade;
+    public void adcEstoque(int quantidade) {
+         this.quantidade += quantidade;
+    }
+
+    public void rmvEstoque(int quantidade) {
+         this.quantidade -= quantidade;
     }
 
     public String toString() {
-        return "Dados do produto: " + nome + " | $ " + String.format("%.2f", preco) + quantidade + " | unidades"
-                + " | Total: $" + String.format("%.2f", valorEstoque());
+        return "Dados do produto: " + nome + ", $ " + String.format("%.2f", preco)
+                + ", " + quantidade + " unidades, Total: $ " + String.format("%.2f", valorEstoque());
     }
 }
